@@ -1,0 +1,11 @@
+module ultrasonic_distance (
+    input logic clk,
+    input logic rst,
+    input logic echo,
+    output logic trig,
+    output logic [15:0] distance
+);
+
+// Implementation of ultrasonic distance measurement here
+
+endmodule

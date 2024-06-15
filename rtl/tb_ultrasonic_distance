@@ -1,0 +1,28 @@
+module tb_ultrasonic_distance;
+    logic clk;
+    logic rst;
+    logic echo;
+    logic trig;
+    logic [15:0] distance;
+
+    ultrasonic_distance uut (
+        .clk(clk),
+        .rst(rst),
+        .echo(echo),
+        .trig(trig),
+        .distance(distance)
+    );
+
+    initial begin
+        clk = 0;
+        forever #5 clk = ~clk;
+    end
+
+    initial begin
+        rst = 1;
+        #10;
+        rst = 0;
+        #2000;
+        $stop;
+    end
+endmodule
